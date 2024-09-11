@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>자바스크립트 기초 문법</title>
   </head>
+
   <body>
     <script>
       /*
@@ -24,17 +25,23 @@
       - null (Object)
       - Func (Object)
       */
+
       const text = "hello";
       console.dir(text);
+
       const num = 3;
       console.log(num);
+
       const isTrue = true;
       console.log(isTrue);
+
       let mistake; //메모리 선언후 값을 집어넣지 않으면 자동적으로 들어가는 자료형
       console.log(mistake);
       ///////////////////
+
       const colors = ["red", "green", "blue"];
       console.log(colors);
+
       const myInfo = {
         name: "David",
         age: 20,
@@ -47,6 +54,19 @@
       //undefined vs null
       //undefined는 에러상황 : 있어야 될 위치가 값이 없는 경우이기 떄문에
       //null : 일부러 값을 비워둘때, 추구 객체가 담길 메모리 공간에 지금 당장은 값을 담을 수 없을떄 일부러 null로 초기화
+      //문자열, 숫자 다룰때 주의점
+      const text = "2";
+      const num = 2;
+      const result = text + num; //문자와 숫자는 산술적으로 연산할 수 없으니 num의 숫자값을 강제로 문자 형변환처리
+      console.log(result); //2로 변환된 2개의 문자값을 이어붙여서 '22'
+
+      // = 대입연산자 기준으로는 오른쪽 식이 먼저 연산된 뒤, 결과값이 왼쪽에 대입
+      //표현식 안쪽에서 왼쪽에서 오른쪽으로 연산처리됨
+      const num1 = 1;
+      const num2 = 2;
+      const num3 = "3";
+      console.log(num1 + num2 + num3); //'33';
+      console.log(num3 + num2 + num1); //'321';
     </script>
   </body>
 </html>
